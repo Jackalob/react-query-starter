@@ -3,17 +3,26 @@
     {
       "id": 1,
       "name": "Batman",
-      "alterEgo": "Bruce Wayne"
+      "alterEgo": "Bruce Wayne",
+      "show": true
     },
     {
       "id": 2,
       "name": "Superman",
-      "alterEgo": "Clark Kent"
+      "alterEgo": "Clark Kent",
+      "show": true
     },
     {
       "id": 3,
       "name": "Wonder Woman",
-      "alterEgo": "Princess Diana"
+      "alterEgo": "Princess Diana",
+      "show": true
+    },
+    {
+      "id": 4,
+      "name": "Bee man",
+      "alterEgo": "Divano Rojus",
+      "show": false
     }
   ],
   "friends": [
