@@ -8,6 +8,8 @@ import ParallelQueries from "./pages/ParallelQueries";
 import DynamicParallel from "./pages/DynamicParallel";
 import Test13Page from "./pages/Test.13";
 import DependentQueries from "./pages/DependentQueries";
+import PaginatedQueries from "./pages/PaginatedQueries";
+import InfiniteQueries from "./pages/InfiniteQueries";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
@@ -47,9 +49,21 @@ function App() {
               <li>
                 <Link to="/dependent-queries">Dependent Queries</Link>
               </li>
+              <li>
+                <Link to="/paginated-queries">Paginated Queries</Link>
+              </li>
+              <li>
+                <Link to="/infinite-queries">Infinite Queries</Link>
+              </li>
             </ul>
           </nav>
           <Switch>
+            <Route path="/paginated-queries">
+              <PaginatedQueries />
+            </Route>
+            <Route path="/infinite-queries">
+              <InfiniteQueries />
+            </Route>
             <Route path="/super-heroes">
               <SuperHeroesPage />
             </Route>
