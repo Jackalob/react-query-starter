@@ -1,28 +1,16 @@
-import { useSuperHeros } from "../hooks/useSuperHeros";
+import { useSuperHeros } from "../hooks/superHeros";
+import { Link } from "react-router-dom";
 
 export const RQSuperHeroesPage = () => {
-  const onSuccess = (data) => console.log(data, "It's working!!");
-
-  const onError = (error) => console.log(error, "Uh.., something wrong.");
-
-  const { data, isLoading, isError, error, isFetching } = useSuperHeros({
-    onSuccess,
-    onError,
-  });
-
-  console.log({ isLoading, isFetching, data });
-
-  if (isFetching) return <h2>Loading...</h2>;
-
-  if (isError) return <h2>{error.message}</h2>;
+  const { data, isLoading, isError, error, isFetching } = useSuperHeros();
 
   return (
     <>
       React Query Super Heroes Page
       {data ? (
         data.map((hero) => (
-          <div key={hero.name}>
-            {hero.name} - {hero.randomToken}
+          <div key={hero.id}>
+            <Link to={`/rq-super-heroes/${hero.id}`}>{hero.name}</Link>
           </div>
         ))
       ) : isLoading && !isFetching ? (

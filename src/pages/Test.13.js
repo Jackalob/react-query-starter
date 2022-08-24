@@ -1,4 +1,4 @@
-import { useSuperHeros } from "../hooks/useSuperHeros";
+import { useSuperHeros } from "../hooks/superHeros";
 
 function Test13Page() {
   const { data, isLoading, isFetching, refetch } =

@@ -3,7 +3,11 @@ import "./App.css";
 import { HomePage } from "./pages/Home";
 import { RQSuperHeroesPage } from "./pages/RQSuperHeroes";
 import { SuperHeroesPage } from "./pages/SuperHeroes";
+import RQSuperHeroPage from "./pages/RQSuperHero";
+import ParallelQueries from "./pages/ParallelQueries";
+import DynamicParallel from "./pages/DynamicParallel";
 import Test13Page from "./pages/Test.13";
+import DependentQueries from "./pages/DependentQueries";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 
@@ -34,14 +38,35 @@ function App() {
               <li>
                 <Link to="/test-13">RQ Test. 13</Link>
               </li>
+              <li>
+                <Link to="/parallel">Parallel Queries</Link>
+              </li>
+              <li>
+                <Link to="/dynamic-parallel">Dynamic Parallel</Link>
+              </li>
+              <li>
+                <Link to="/dependent-queries">Dependent Queries</Link>
+              </li>
             </ul>
           </nav>
           <Switch>
             <Route path="/super-heroes">
               <SuperHeroesPage />
             </Route>
+            <Route path="/rq-super-heroes/:heroId">
+              <RQSuperHeroPage />
+            </Route>
             <Route path="/rq-super-heroes">
               <RQSuperHeroesPage />
+            </Route>
+            <Route path="/dynamic-parallel">
+              <DynamicParallel heroId={[1, 3]} />
+            </Route>
+            <Route path="/dependent-queries">
+              <DependentQueries email="vishwas@example.com" />
+            </Route>
+            <Route path="/parallel">
+              <ParallelQueries />
             </Route>
             <Route path="/test-13">
               <Test13Page />
